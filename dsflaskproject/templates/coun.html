@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <style>
+             li{
+                display: inline;
+                padding: 100px;
+            }
+            a{
+                text-decoration: none;
+                font-size: 30px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: whitesmoke;
+            }
+            body{
+                background:linear-gradient(gray,black)
+            }
+            select{
+                display: inline;
+            }
+            form{
+                margin-top: 20%;
+            }
+            option{
+                height: 30px;
+                width: 30px;
+                background-color:black;
+                color:whitesmoke;
+                font-size: 20px;
+            }
+            select{
+                background-color:black;
+                color:whitesmoke;
+                font-size: 20px;
+            }
+            #sub{
+                height: 40px;
+                width: 100px;
+                color: tomato;
+                background-color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><a href="#">CORONA NEWS UPDATES</a></li>
+                <li><a href="/country/">COUNTRY WISE UPDATES</a></li>
+            </ul>
+        </div>
+        <center>
+        <div>
+            <form action="/getdetails/" method="POST">
+                <select name="country">
+                    {% for i in country %}
+                    <option value={{i}}>{{i}}</option>
+                    {% endfor %}
+                </select>
+                <select name="month">
+                    <option value="01">Jan</option>
+                    <option value="02">Feb</option>
+                    <option value="03">Mar</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                </select>
+                <select name="type">
+                    <option value="Recovered">Recovered</option>
+                    <option value="Deaths">Death</option>
+                    <option value="Confirmed">Confirmed</option>
+                </select>
+                <input type="submit" value="SUBMIT" id="sub">
+            </form>
+        </div>
+        </center>
+    </body>
+</html>
